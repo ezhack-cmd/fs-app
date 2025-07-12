@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: finance-visualizer
+    env: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENDART_API_KEY
+        sync: false
+    autoDeploy: true 
